@@ -64,11 +64,11 @@ INSERT INTO Dishes (IdDishes, Name, Price, Category, Is_vegan)
     VALUES
         (1, 'Margerita', 6.50, 'Pizza', True),
         (2, 'Capricciosa', 7.50, 'Pizza', True),
-        (3, 'Regina', 9, 'Pizza', False),
-        (4, 'New Yorker', 8, 'Burger', False),
-        (5, 'Chicken', 5, 'Burger', False),
+        (3, 'Regina', 9, 'Pizza', NULL),
+        (4, 'New Yorker', 8, 'Burger', NULL),
+        (5, 'Chicken', 5, 'Burger', NULL),
         (6, 'Miso Ramen', 10, 'Ramen', True),
-        (7, 'Shoyu Ramen', 10, 'Ramen', False);
+        (7, 'Shoyu Ramen', 10, 'Ramen', NULL);
 
 INSERT INTO Employees (IdEmployees, Firstname, Lastname, Role, IdRestaurant, Hire_date)
     VALUES
