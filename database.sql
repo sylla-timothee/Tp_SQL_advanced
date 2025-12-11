@@ -39,3 +39,8 @@ CREATE TABLE IF NOT EXISTS OrderItems (
     FOREIGN KEY (IdOrders) REFERENCES Orders(IdOrders),
     FOREIGN KEY (IdDishes) REFERENCES Dishes(IdDishes)
 );
+
+ALTER TABLE Employees ADD COLUMN Hire_date TEXT NOT NULL;
+ALTER TABLE Dishes ADD COLUMN Is_vegan TEXT;
+ALTER TABLE Orders RENAME TO CustomerOrders;
+
