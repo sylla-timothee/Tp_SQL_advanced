@@ -103,11 +103,13 @@ INSERT INTO Employees (IdEmployees, Firstname, Lastname, Role, IdRestaurant, Hir
         (29, 'Bob', 'Smith', 'Employee', 9, NULL),
         (30, 'Alice', 'Smith', 'Employee', 10, '2029-01-01');
 
+/* Select data from the tables */
 SELECT * FROM Restaurants;
 SELECT * FROM Dishes ORDER BY Price DESC;
 SELECT * FROM Employees ORDER BY Role;
 SELECT * FROM Dishes WHERE Is_vegan = True;
 SELECT * FROM Dishes WHERE Price > (SELECT AVG(Price) FROM Dishes);
 
+/* Handle NULL values */
 SELECT * FROM Dishes WHERE Is_vegan IS NULL;
 SELECT * FROM Employees WHERE Hire_date IS NULL;
