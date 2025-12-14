@@ -77,8 +77,37 @@ INSERT INTO Employees (IdEmployees, Firstname, Lastname, Role, IdRestaurant, Hir
         (3, 'Bob', 'Smith', 'Manager', 3, '2022-01-01'),
         (4, 'Alice', 'Smith', 'Manager', 4, '2023-01-01'),
         (5, 'Bob', 'Smith', 'Manager', 5, '2024-01-01'),
-        (6, 'Alice', 'Smith', 'Manager', 6, '2025-01-01'),
+        (6, 'Alice', 'Smith', 'Manager', 6, NULL),
         (7, 'Bob', 'Smith', 'Manager', 7, '2026-01-01'),
         (8, 'Alice', 'Smith', 'Manager', 8, '2027-01-01'),
         (9, 'Bob', 'Smith', 'Manager', 9, '2028-01-01'),
-        (10, 'Alice', 'Smith', 'Manager', 10, '2029-01-01');
+        (10, 'Alice', 'Smith', 'Manager', 10, NULL),
+        (11, 'John', 'Doe', 'Employee', 1, '2020-01-01'),
+        (12, 'Jane', 'Doe', 'Employee', 2, '2021-01-01'),
+        (13, 'Bob', 'Smith', 'Employee', 3, '2022-01-01'),
+        (14, 'Alice', 'Smith', 'Employee', 4, '2023-01-01'),
+        (15, 'Bob', 'Smith', 'Employee', 5, '2024-01-01'),
+        (16, 'Alice', 'Smith', 'Employee', 6, '2025-01-01'),
+        (17, 'Bob', 'Smith', 'Employee', 7, '2026-01-01'),
+        (18, 'Alice', 'Smith', 'Employee', 8, '2027-01-01'),
+        (19, 'Bob', 'Smith', 'Employee', 9, '2028-01-01'),
+        (20, 'Alice', 'Smith', 'Employee', 10, '2029-01-01'),
+        (21, 'John', 'Doe', 'Employee', 1, NULL),
+        (22, 'Jane', 'Doe', 'Employee', 2, '2021-01-01'),
+        (23, 'Bob', 'Smith', 'Employee', 3, '2022-01-01'),
+        (24, 'Alice', 'Smith', 'Employee', 4, '2023-01-01'),
+        (25, 'Bob', 'Smith', 'Employee', 5, '2024-01-01'),
+        (26, 'Alice', 'Smith', 'Employee', 6, '2025-01-01'),
+        (27, 'Bob', 'Smith', 'Employee', 7, '2026-01-01'),
+        (28, 'Alice', 'Smith', 'Employee', 8, '2027-01-01'),
+        (29, 'Bob', 'Smith', 'Employee', 9, NULL),
+        (30, 'Alice', 'Smith', 'Employee', 10, '2029-01-01');
+
+SELECT * FROM Restaurants;
+SELECT * FROM Dishes ORDER BY Price DESC;
+SELECT * FROM Employees ORDER BY Role;
+SELECT * FROM Dishes WHERE Is_vegan = True;
+SELECT * FROM Dishes WHERE Price > (SELECT AVG(Price) FROM Dishes);
+
+SELECT * FROM Dishes WHERE Is_vegan IS NULL;
+SELECT * FROM Employees WHERE Hire_date IS NULL;
