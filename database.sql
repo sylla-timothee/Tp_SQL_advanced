@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS OrderItems (
 
 /* Alter tables to add Hire_date, Is_vegan and rename Orders */
 
-ALTER TABLE Employees ADD COLUMN Hire_date TEXT NOT NULL;
+ALTER TABLE Employees ADD COLUMN Hire_date TEXT;
 ALTER TABLE Dishes ADD COLUMN Is_vegan BOOLEAN;
 ALTER TABLE Orders RENAME TO CustomerOrders;
 
@@ -136,11 +136,6 @@ SELECT
 FROM CustomerOrders CO
 JOIN OrderItems oi ON co.IdOrders = oi.IdOrders
 JOIN Dishes d ON oi.IdDishes = d.IdDishes;
-
-/* Required modifications */
-ALTER TABLE Employees ADD COLUMN Hire_date TEXT NOT NULL;
-ALTER TABLE Dishes ADD COLUMN Is_vegan BOOLEAN;
-ALTER TABLE Orders RENAME TO CustomerOrders;
 
 /* List employees with restaurants */
 SELECT
