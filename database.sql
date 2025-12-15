@@ -168,3 +168,9 @@ SELECT
 FROM Restaurants r
 LEFT JOIN Employees e ON r.IdRestaurant = e.IdRestaurant
 GROUP BY r.IdRestaurant;
+
+/* Final Analysis */
+SELECT AVG(d.Price) AS Average_Price FROM Dishes d;
+SELECT SUM(d.Price) AS Total_Sales FROM Dishes d;
+SELECT * From Dishes ORDER BY Price DESC LIMIT 3;
+SELECT * FROM Employees WHERE Firstname LIKE 'a%';
