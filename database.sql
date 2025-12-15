@@ -159,6 +159,8 @@ WHERE Price < 12;
 /*Delete*/
 DELETE FROM Dishes 
 WHERE Price IS NULL;
+DELETE FROM OrderItems
+WHERE IdOrders IN (SELECT IdOrders FROM CustomerOrders WHERE Total_amount < 5);
 DELETE FROM CustomerOrders
 WHERE Total_amount < 5;
 
