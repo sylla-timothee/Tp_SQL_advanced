@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Employees (
 CREATE TABLE IF NOT EXISTS Dishes (
     IdDishes INTEGER PRIMARY KEY,
     Name TEXT NOT NULL,
-    Price INTEGER NOT NULL,
+    Price REAL NOT NULL,
     Category TEXT NOT NULL
 );
 
@@ -117,8 +117,8 @@ SELECT * FROM Dishes WHERE Is_vegan = True;
 SELECT * FROM Dishes WHERE Price > (SELECT AVG(Price) FROM Dishes);
 
 /* SELECT NULL */
-SELECT * FROM Dishes WHERE Is_vegan == NULL;
-SELECT * FROM Employees WHERE Hire_date == NULL;
+SELECT * FROM Dishes WHERE Is_vegan IS NULL;
+SELECT * FROM Employees WHERE Hire_date IS NULL;
 
 /* Commands gestions*/
 INSERT INTO CustomerOrders (IdOrders, IdRestaurant, Total_amount, Customer_name)
@@ -159,7 +159,7 @@ WHERE Price < 12;
 /*Delete*/
 DELETE FROM Dishes 
 WHERE Price IS NULL;
-DELETE FROM Orders
+DELETE FROM CustomerOrders
 WHERE Total_amount < 5;
 
 /* List employees with restaurants */
