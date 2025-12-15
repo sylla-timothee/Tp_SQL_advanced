@@ -77,7 +77,7 @@ SELECT * FROM Dishes WHERE Is_vegan == NULL;
 SELECT * FROM Employees WHERE Hire_date == NULL;
 
 /* Commands gestions*/
-/*Make Commands*/
+
 INSERT INTO CustomerOrders (IdOrders, IdRestaurant, Total_amount, Customer_name)
     VALUES
         (1, 3, 2, 'Luke Skywalker'),
@@ -114,3 +114,10 @@ WHERE Price < 12;
 UPDATE Dishes
 SET Price = Price * 0.95
 WHERE Price < 12;
+
+/*Delete*/
+DELETE FROM Dishes 
+WHERE Price IS NULL;
+
+DELETE FROM Orders
+WHERE Total_amount < 5;
