@@ -141,3 +141,35 @@ JOIN Dishes d ON oi.IdDishes = d.IdDishes;
 ALTER TABLE Employees ADD COLUMN Hire_date TEXT NOT NULL;
 ALTER TABLE Dishes ADD COLUMN Is_vegan BOOLEAN;
 ALTER TABLE Orders RENAME TO CustomerOrders;
+
+/* List employees with restaurants */
+SELECT
+    e.Firstname,
+    e.Lastname,
+    e.Role,
+    r.Name AS Restaurant_Name,
+    r.Planet
+FROM Employees e
+JOIN Restaurants r ON e.IdRestaurant = r.IdRestaurant;
+
+/* List most ordered dishes */
+SELECT
+    d.Name AS Dish_Name,
+    co.Customer_name,
+    r.Planet,
+    SUM(oi.Quantity) AS Total_Ordered
+FROM OrderItems oi
+JOIN Dishes d ON oi.IdDishes = d.IdDishes
+JOIN CustomerOrders co ON oi.IdOrders = co.IdOrders
+JOIN Restaurants r ON co.IdRestaurant = r.IdRestaurant
+GROUP BY d.Name, co.Customer_name, r.Planet
+ORDER BY Total_Ordered DESC;
+
+/* List restaurants with total employees */
+SELECT
+    r.Name AS Restaurant_Name,
+    r.Planet,
+    COUNT(e.IdEmployees) AS Total_Employees
+FROM Restaurants r
+LEFT JOIN Employees e ON r.IdRestaurant = e.IdRestaurant
+GROUP BY r.IdRestaurant;
